@@ -1,1 +1,32 @@
 
+html, body, div, input {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+html, body{
+  font-family: 'Nunito', sans-serif;
+  height: 100%;
+  //background: $baseColor;
+}
+
+h1,h2,h3{
+  font-family: 'Tilt Neon', cursive;
+  margin: 0;
+}
+
+p {
+  margin: 10px 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.menu-on {
+  overflow: hidden;
+  //background-color: rgb(191, 191, 191, .8);
+}

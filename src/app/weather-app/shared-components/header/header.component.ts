@@ -24,7 +24,6 @@ export class HeaderComponent implements OnInit{
       this.renderer.removeClass(document.body, 'menu-on')
     }
   }
-// TODO: mirar bien el hostlistener
   @HostListener('window:resize') onResize() {
     if (window.innerWidth < 769) { // 768px portrait
       this.isMobile = true;

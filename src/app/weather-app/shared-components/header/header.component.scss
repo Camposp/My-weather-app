@@ -1,24 +1,22 @@
 header {
-  height: 60px;
-  box-shadow: 0px 0px 9px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 9px 2px rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: azure;
+  position: fixed;
+  top: 0;
+  width: 100%;
 
   .logo {
-    padding: 0 2rem;
-
-    .icon-hamburguer {
-      display: none;
-    }
+    padding: 1rem 2rem;
   }
 
   .nav-menu {
-
+    padding: 1rem 2rem;
     .nav-menu-container {
       display: flex;
       align-items: center;
-      padding: 0 2rem;
 
       .nav-search {
         margin-right: 1rem;
@@ -31,7 +29,13 @@ header {
 
         .language {
           margin-right: 1rem;
-          font-size: 1.1rem;
+
+          select {
+            background: transparent;
+            border: none;
+            font-family: 'Nunito', sans-serif;
+            font-size: 1.1rem;
+          }
         }
 
         .dark-mode {
@@ -46,62 +50,54 @@ header {
 
 @media (max-width: 768px) {
   header {
-    background: azure;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    flex-direction: column;
-    align-items: inherit;
 
     .logo {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
+      padding: 1rem 2rem;
+      width: 100%;
 
       .logo-img {
-        width: 56px;
-        height: 40px;
+
       }
       .menu-icon {
-        //TODO: ver como hacer esto
-        transition: 2s ease;
+        font-size: 1.5rem;
       }
     }
 
     .nav-menu {
-      //flex-direction: column;
-      //align-items: center;
-      //z-index: 1;
       background: aliceblue;
-      //transition: ease 5s;
+      width: 80vw;
+      position: fixed;
+      top: 0;
+      z-index: 3;
 
       .nav-menu-container {
         display: revert;
-        width: 60vw;
-        height: calc(100vh - 60px);
-        margin: 0 auto;
+        height: 100vh;
+
+        .nav-search {
+          margin-right: 0;
+        }
 
         .nav-options {
           padding: 1rem 0;
           justify-content: space-between;
 
           .language {
-
+            margin-right: 0;
           }
         }
       }
     }
+    .backdrop-layer  {
+      background: rgba(38,38,38,.5);
+      width: 100vw;
+      height: 100vh;
+      z-index: 2;
+      position: fixed;
+      top: 0;
+    }
   }
-  //.backdrop {
-  //  z-index: 900;
-  //  position: fixed;
-  //  top: 0;
-  //  right: 0;
-  //  bottom: 0;
-  //  left: 0;
-  //  //background-color: #000;
-  //  //// makes the below elements visible to a degree.
-  //  //opacity: 0.95;
-  //  backdrop-filter: blur(10px);
-  //}
 }

@@ -1,11 +1,11 @@
 <header>
-  <div class="logo" [routerLink]="''">
+  <div class="logo">
     <!--      <i class="fa-solid fa-rainbow color"></i>-->
-    <p class="logo-img">Logo</p>
+    <h1 class="logo-img" [routerLink]="''">Logo</h1>
     <i *ngIf="isMobile"
        class="menu-icon"
-       [ngClass]="{'bi bi-list': !isMenuOpen, 'bi bi-x-lg': isMenuOpen}"
-       (click)="toggleMenu()">
+       [ngClass]="{'bi bi-list': !isMenuOpen }"
+       (click)="toggleMenuMobile()">
     </i>
   </div>
   <nav class="nav-menu" *ngIf="((isMobile && isMenuOpen) || !isMobile)">
@@ -27,5 +27,5 @@
       </div>
     </div>
   </nav>
+  <div class="backdrop-layer" (click)="toggleMenuMobile()" *ngIf="isMobile && isMenuOpen"></div>
 </header>
-<!--<div *ngIf="isMobile && isMenuOpen" class="backdrop"></div>-->

@@ -18,7 +18,7 @@ export class WeatherDetailComponent implements OnInit, OnDestroy{
   private activatedRoute = inject(ActivatedRoute)
   private weatherServ = inject(WeatherService)
   weather$!: Observable<WeatherIn>;
-  paramSubscription: Subscription;
+  paramSubscription!: Subscription;
   ngOnInit() {
     this.paramSubscription = this.activatedRoute.params.subscribe((param) => {
       const city = param['city'];

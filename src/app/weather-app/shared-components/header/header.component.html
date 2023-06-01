@@ -3,11 +3,11 @@
     <h1 class="logo-img" [routerLink]="''">Logo</h1>
     <i *ngIf="isMobile"
        class="menu-icon"
-       [ngClass]="{'bi bi-list': !isMenuOpen }"
+       [ngClass]="{'bi bi-list': !navServ.isMenuOpen }"
        (click)="toggleMenuMobile()">
     </i>
   </div>
-  <nav class="nav-menu" *ngIf="((isMobile && isMenuOpen) || !isMobile)">
+  <nav class="nav-menu" *ngIf="((isMobile && navServ.isMenuOpen) || !isMobile)">
     <div class="nav-menu-container">
       <div class="nav-search">
         <i *ngIf="!isMobile" class="bi bi-search-heart"></i>
@@ -26,5 +26,6 @@
       </div>
     </div>
   </nav>
-  <div class="backdrop-layer" (click)="toggleMenuMobile()" *ngIf="isMobile && isMenuOpen"></div>
+  <div class="backdrop-layer" (click)="toggleMenuMobile()"
+       *ngIf="isMobile && navServ.isMenuOpen"></div>
 </header>

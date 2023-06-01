@@ -1,14 +1,23 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { NavService } from '../../nav.service';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent {
-  private router = inject(Router);
+  constructor(private router: Router,
+              private navServ: NavService) {
+  }
 
-  goTo(): void {
-    this.router.navigate(['./detail/madrid'])
+
+
+  inputChange(param: string) {
+    if (param !== '' ) {
+      const queryParam = param.trim();
+      this.navServ.hide();
+      this.router.navigate([`./detail/${queryParam}`]);
+    }
   }
 }

@@ -1,16 +1,16 @@
 import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CardDetailComponent } from './card-detail/card-detail.component';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { WeatherService } from '../weather.service';
 import { WeatherIn } from '../weather.interface';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-weather-detail',
   standalone: true,
-  imports: [CommonModule, CardDetailComponent],
-  providers: [WeatherService],
+  imports: [ CommonModule, TranslateModule ],
+  providers: [WeatherService, TranslateService],
   templateUrl: './weather-detail.component.html',
   styleUrls: ['./weather-detail.component.scss']
 })

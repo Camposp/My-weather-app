@@ -29,13 +29,43 @@ header {
 
         .language {
           margin-right: 1rem;
+          .dropdown {
+            position: relative;
+            padding: .2rem .3rem;
 
-          select {
-            background: transparent;
-            border: none;
-            font-family: 'Nunito', sans-serif;
-            font-size: 1.1rem;
+            .default-lang {
+              margin-right: 5px;
+            }
+            .bi-chevron-down {
+              font-size: .8em;
+            }
+
           }
+          .options {
+            position: absolute;
+            border-radius: 5px;
+            background-color: white;
+            box-shadow: 1px 1px 1px grey;
+            padding: .2rem 0;
+
+            button {
+              background: transparent;
+              border: none;
+              padding: 0.4rem 1.2rem;
+              width: 100%;
+
+              &:hover {
+                background-color: #f2f2f2;
+              }
+            }
+          }
+
+          //select {
+          //  background: transparent;
+          //  border: none;
+          //  font-family: 'Nunito', sans-serif;
+          //  font-size: 1.1rem;
+          //}
         }
 
         .dark-mode {

@@ -9,7 +9,6 @@
         {{weather.main.feels_like.toFixed()}}°</p>
     </div>
     <small class="see-more" *ngIf="isMobile" (click)="seeMore()">
-<!--      <small translate>{{moreContent ? 'weather.card.seeless' : 'weather.card.seemore'}}</small>-->
       <small *ngIf="!moreContent" translate>weather.card.seemore</small>
       <small *ngIf="moreContent" translate>weather.card.seeless</small>
     </small>

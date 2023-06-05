@@ -1,6 +1,31 @@
-<p>weather-detail works!</p>
 <p translate>weather.card.title</p>
 
-<div *ngIf="(weather$ | async) as weather">
-  {{weather.name}}
+<div *ngIf="(weather$ | async) as weather" class="card">
+  <div class="card-container">
+    <div class="card-header">
+      <i class="bi bi-sun large-icon sun"></i>
+      <p>{{weather.main.temp.toFixed()}}°</p>
+      <p class="real-feel"><span translate>weather.card.realfeel</span>
+        {{weather.main.feels_like.toFixed()}}°</p>
+    </div>
+    <small class="see-more" *ngIf="isMobile" (click)="seeMore()">
+<!--      <small translate>{{moreContent ? 'weather.card.seeless' : 'weather.card.seemore'}}</small>-->
+      <small *ngIf="!moreContent" translate>weather.card.seemore</small>
+      <small *ngIf="moreContent" translate>weather.card.seeless</small>
+    </small>
+    <div class="card-content" [ngClass]="{'hide': isMobile && !moreContent}">
+      <div>{{weather.name}}, {{weather.sys.country}}</div>
+      <div>
+        <i class="bi bi-arrow-up medium-icon"></i>{{weather.main.temp_max.toFixed()}}°
+        <i class="bi bi-arrow-down medium-icon"></i>{{weather.main.temp_min.toFixed()}}°
+      </div>
+      <div><span translate>weather.card.humidity </span>{{weather.main.humidity}}%</div>
+      <div>
+        <i class="bi bi-sunrise medium-icon"></i>{{weather.sys.sunrise | customDate |
+        date:'H:mm a'}}
+        <i class="bi bi-sunset medium-icon"></i>{{weather.sys.sunset | customDate
+        | date:'H:mm a'}}
+      </div>
+    </div>
+  </div>
 </div>

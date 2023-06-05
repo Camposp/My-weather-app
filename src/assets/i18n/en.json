@@ -5,7 +5,10 @@
   "weather": {
     "card": {
       "title": "This is a test",
-      "subtitle": "This is the CARD"
+      "humidity": "Humidity",
+      "seemore": "See more",
+      "seeless": "See less",
+      "realfeel": "Real feel"
     }
   }
 }

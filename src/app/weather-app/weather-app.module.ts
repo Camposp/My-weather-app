@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './shared-components/search/search.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { CustomDatePipe } from './custom-date.pipe';
 
 
 
@@ -10,6 +11,7 @@ import { TranslateModule } from '@ngx-translate/core';
   declarations: [
     HomeComponent,
     SearchComponent,
+    CustomDatePipe
   ],
   imports: [
     CommonModule,
@@ -17,7 +19,8 @@ import { TranslateModule } from '@ngx-translate/core';
   ],
   exports: [
     HomeComponent,
-    SearchComponent
+    SearchComponent,
+    CustomDatePipe
   ]
 })
 export class WeatherAppModule { }

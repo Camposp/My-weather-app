@@ -10,16 +10,22 @@
   <nav class="nav-menu" *ngIf="((isMobile && navServ.isMenuOpen) || !isMobile)">
     <div class="nav-menu-container">
       <div class="nav-search">
-        <i *ngIf="!isMobile" class="bi bi-search-heart"></i>
+        <i *ngIf="!isMobile" class="bi bi-search-heart" [routerLink]="''"></i>
         <app-search *ngIf="isMobile"></app-search>
       </div>
       <div class="nav-options">
+
         <div class="language">
-          <select>
-            <option>ES</option>
-            <option>EN</option>
-          </select>
+          <div class="dropdown">
+            <span class="default-lang">{{defaultLang | uppercase}}</span>
+            <span (click)="toggleOption()"><i class="bi bi-chevron-down"></i></span>
+          </div>
+          <div class="options" *ngIf="menuClicked">
+            <div><button (click)="changeLang('es')">ES</button></div>
+            <div><button (click)="changeLang('en')">EN</button></div>
+          </div>
         </div>
+
         <div class="dark-mode">
           <i class="bi bi-moon-stars-fill"></i>
         </div>

@@ -20,9 +20,7 @@ export class WeatherService {
       .pipe(
         catchError((err) => {
           this.router.navigate([''])
-          this.toastr.error('Por favor realiza otra búsqueda', `${err.statusText}`, {
-            positionClass: 'toast-center-center'
-          })
+          this.toastr.error('Por favor realiza otra búsqueda', `${err.statusText}`)
           return this.handleError(err);
         })
       )

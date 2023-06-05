@@ -1,0 +1,13 @@
+{
+  "home": {
+    "title": "Welcome to weather app"
+  },
+  "weather": {
+    "card": {
+      "title": "This is a test",
+      "subtitle": "This is the CARD"
+    }
+  }
+}
+
+

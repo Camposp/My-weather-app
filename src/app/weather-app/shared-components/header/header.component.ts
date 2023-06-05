@@ -1,5 +1,6 @@
-import { Component, HostListener, OnInit, Renderer2 } from '@angular/core';
+import { Component, HostListener, Input, OnInit, Renderer2 } from '@angular/core';
 import { NavService } from '../../nav.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
@@ -7,14 +8,23 @@ import { NavService } from '../../nav.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit{
+  @Input() lang!: string | null;
   isMobile!: boolean;
-
+  defaultLang!: string |null;
+  menuClicked!: boolean;
   constructor(private renderer: Renderer2,
-              public navServ: NavService) {
+              public navServ: NavService,
+              private translate: TranslateService) {
   }
   ngOnInit() {
-  this.onResize();
-}
+    this.onResize();
+    this.menuClicked = false;
+    this.defaultLang = this.lang;
+  }
+
+  toggleOption() {
+    this.menuClicked = !this.menuClicked;
+  }
 
   toggleMenuMobile() {
     this.navServ.toggle();
@@ -25,10 +35,22 @@ export class HeaderComponent implements OnInit{
       this.renderer.removeClass(document.body, 'menu-on')
     }
   }
+
+  changeLang(langParam: string){
+    this.menuClicked = false;
+
+    if (this.defaultLang !== langParam) {
+      this.defaultLang = langParam;
+      localStorage.setItem('lang', this.defaultLang)
+      this.translate.use(this.defaultLang);
+
+    }
+  }
   @HostListener('window:resize') onResize() {
     if (window.innerWidth < 769) { // 768px portrait
       this.isMobile = true;
       this.navServ.isMenuOpen = false;
+      this.menuClicked = false;
     } else {
       this.isMobile = false;
     }

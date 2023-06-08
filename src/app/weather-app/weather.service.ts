@@ -16,7 +16,7 @@ export class WeatherService {
   }
 
   getWeatherByCity(param: string): Observable<WeatherIn> {
-    return this.http.get<WeatherIn>(`${this.url}?q=${param}&appid=${this.key}&units=metric&lang=en`)
+    return this.http.get<WeatherIn>(`${this.url}?q=${param}&appid=${this.key}&units=metric&lang=es`)
       .pipe(
         catchError((err) => {
           this.router.navigate([''])

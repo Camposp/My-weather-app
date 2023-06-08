@@ -13,16 +13,15 @@
                       'bi bi-snow2':weather.weather[0].icon === '13d'||weather.weather[0].icon=== '13n',
                       'bi bi-water':weather.weather[0].icon === '50d' || weather.weather[0].icon=== '50n'}">
       </i>
-
-      <small>{{weather.weather[0].main}} {{weather.weather[0].icon}}</small>
-      <small>{{weather.weather[0].description}}</small>
+      <small>{{weather.weather[0].main}}</small>
+      <small>{{weather.weather[0].description | titlecase}}</small>
       <p>{{weather.main.temp.toFixed()}}°</p>
-      <p class="real-feel"><span translate>weather.card.realfeel</span>
+      <p class="real-feel"><span translate>weather.card.real</span>
         {{weather.main.feels_like.toFixed()}}°</p>
     </div>
     <small class="see-more" *ngIf="isMobile" (click)="seeMore()">
-      <small *ngIf="!moreContent" translate>weather.card.seemore</small>
-      <small *ngIf="moreContent" translate>weather.card.seeless</small>
+      <small *ngIf="!moreContent" translate>weather.card.more</small>
+      <small *ngIf="moreContent" translate>weather.card.less</small>
     </small>
     <div class="card-content" [ngClass]="{'hide': isMobile && !moreContent}">
       <div>{{weather.name}}, {{weather.sys.country}}</div>

@@ -14,7 +14,6 @@ export class SearchComponent {
 
 
   inputChange(param: string) {
-    console.log('entro')
     if (param !== '' ) {
       const queryParam = param.trim();
       this.navServ.hide();

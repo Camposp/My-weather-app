@@ -6,9 +6,9 @@
     "card": {
       "title": "Esto es una prueba",
       "humidity": "Humedad",
-      "seemore": "Ver más",
-      "seeless": "Ver menos",
-      "realfeel": "Sensación real"
+      "more": "Ver más",
+      "less": "Ver menos",
+      "real": "Sensación real"
     }
   }
 }

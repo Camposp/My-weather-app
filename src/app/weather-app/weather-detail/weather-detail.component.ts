@@ -23,10 +23,11 @@ export class WeatherDetailComponent implements OnInit, OnDestroy{
   moreContent!: boolean;
   ngOnInit() {
     this.onResize();
+
     this.paramSubscription = this.activatedRoute.params.subscribe((param) => {
       const city = param['city'];
       this.getWeatherByCity(city);
-    })
+    });
   }
 
   getWeatherByCity(city: string){

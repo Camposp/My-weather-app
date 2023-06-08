@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { NavService } from '../../nav.service';
 @Component({
@@ -14,6 +14,7 @@ export class SearchComponent {
 
 
   inputChange(param: string) {
+    console.log('entro')
     if (param !== '' ) {
       const queryParam = param.trim();
       this.navServ.hide();

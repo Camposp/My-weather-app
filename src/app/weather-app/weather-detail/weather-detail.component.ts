@@ -6,7 +6,6 @@ import { WeatherService } from '../weather.service';
 import { WeatherIn } from '../weather.interface';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { WeatherAppModule } from '../weather-app.module';
-
 @Component({
   selector: 'app-weather-detail',
   standalone: true,

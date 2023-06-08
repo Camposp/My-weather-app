@@ -3,7 +3,19 @@
 <div *ngIf="(weather$ | async) as weather" class="card">
   <div class="card-container">
     <div class="card-header">
-      <i class="bi bi-sun large-icon sun"></i>
+      <i [ngClass]="{ 'bi bi-sun':weather.weather[0].icon === '01d' || weather.weather[0].icon === '01n',
+                      'bi bi-cloud-sun':weather.weather[0].icon === '02d'||weather.weather[0].icon === '02n',
+                      'bi bi-cloud':weather.weather[0].icon === '03d' || weather.weather[0].icon=== '03n',
+                      'bi bi-clouds':weather.weather[0].icon === '04d'|| weather.weather[0].icon=== '04n',
+                      'bi bi-cloud-drizzle':weather.weather[0].icon === '09d'||weather.weather[0].icon === '09n',
+                      'bi bi-cloud-rain':weather.weather[0].icon === '10d'||weather.weather[0].icon === '10n',
+                      'bi bi-cloud-lightning':weather.weather[0].icon === '11d'||weather.weather[0].icon === '11n',
+                      'bi bi-snow2':weather.weather[0].icon === '13d'||weather.weather[0].icon=== '13n',
+                      'bi bi-water':weather.weather[0].icon === '50d' || weather.weather[0].icon=== '50n'}">
+      </i>
+
+      <small>{{weather.weather[0].main}} {{weather.weather[0].icon}}</small>
+      <small>{{weather.weather[0].description}}</small>
       <p>{{weather.main.temp.toFixed()}}°</p>
       <p class="real-feel"><span translate>weather.card.realfeel</span>
         {{weather.main.feels_like.toFixed()}}°</p>
@@ -28,3 +40,6 @@
     </div>
   </div>
 </div>
+
+
+

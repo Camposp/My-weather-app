@@ -1,6 +1,44 @@
-<p>weather-detail works!</p>
 <p translate>weather.card.title</p>
 
-<div *ngIf="(weather$ | async) as weather">
-  {{weather.name}}
+<div *ngIf="(weather$ | async) as weather" class="card">
+  <div class="card-container">
+    <div class="card-header">
+      <i [ngClass]="{ 'bi bi-sun':weather.weather[0].icon === '01d' || weather.weather[0].icon === '01n',
+                      'bi bi-cloud-sun':weather.weather[0].icon === '02d'||weather.weather[0].icon === '02n',
+                      'bi bi-cloud':weather.weather[0].icon === '03d' || weather.weather[0].icon=== '03n',
+                      'bi bi-clouds':weather.weather[0].icon === '04d'|| weather.weather[0].icon=== '04n',
+                      'bi bi-cloud-drizzle':weather.weather[0].icon === '09d'||weather.weather[0].icon === '09n',
+                      'bi bi-cloud-rain':weather.weather[0].icon === '10d'||weather.weather[0].icon === '10n',
+                      'bi bi-cloud-lightning':weather.weather[0].icon === '11d'||weather.weather[0].icon === '11n',
+                      'bi bi-snow2':weather.weather[0].icon === '13d'||weather.weather[0].icon=== '13n',
+                      'bi bi-water':weather.weather[0].icon === '50d' || weather.weather[0].icon=== '50n'}">
+      </i>
+      <small>{{weather.weather[0].main}}</small>
+      <small>{{weather.weather[0].description | titlecase}}</small>
+      <p>{{weather.main.temp.toFixed()}}°</p>
+      <p class="real-feel"><span translate>weather.card.real</span>
+        {{weather.main.feels_like.toFixed()}}°</p>
+    </div>
+    <small class="see-more" *ngIf="isMobile" (click)="seeMore()">
+      <small *ngIf="!moreContent" translate>weather.card.more</small>
+      <small *ngIf="moreContent" translate>weather.card.less</small>
+    </small>
+    <div class="card-content" [ngClass]="{'hide': isMobile && !moreContent}">
+      <div>{{weather.name}}, {{weather.sys.country}}</div>
+      <div>
+        <i class="bi bi-arrow-up medium-icon"></i>{{weather.main.temp_max.toFixed()}}°
+        <i class="bi bi-arrow-down medium-icon"></i>{{weather.main.temp_min.toFixed()}}°
+      </div>
+      <div><span translate>weather.card.humidity </span>{{weather.main.humidity}}%</div>
+      <div>
+        <i class="bi bi-sunrise medium-icon"></i>{{weather.sys.sunrise | customDate |
+        date:'H:mm a'}}
+        <i class="bi bi-sunset medium-icon"></i>{{weather.sys.sunset | customDate
+        | date:'H:mm a'}}
+      </div>
+    </div>
+  </div>
 </div>
+
+
+

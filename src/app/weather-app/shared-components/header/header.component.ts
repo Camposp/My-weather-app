@@ -11,19 +11,19 @@ export class HeaderComponent implements OnInit{
   @Input() lang!: string | null;
   isMobile!: boolean;
   defaultLang!: string |null;
-  menuClicked!: boolean;
+  langMenuClicked!: boolean;
   constructor(private renderer: Renderer2,
               public navServ: NavService,
               private translate: TranslateService) {
   }
   ngOnInit() {
     this.onResize();
-    this.menuClicked = false;
+    this.langMenuClicked = false;
     this.defaultLang = this.lang;
   }
 
   toggleOption() {
-    this.menuClicked = !this.menuClicked;
+    this.langMenuClicked = !this.langMenuClicked;
   }
 
   toggleMenuMobile() {
@@ -37,7 +37,7 @@ export class HeaderComponent implements OnInit{
   }
 
   changeLang(langParam: string){
-    this.menuClicked = false;
+    this.langMenuClicked = false;
 
     if (this.defaultLang !== langParam) {
       this.defaultLang = langParam;
@@ -49,10 +49,10 @@ export class HeaderComponent implements OnInit{
   @HostListener('window:resize') onResize() {
     if (window.innerWidth < 769) { // 768px portrait
       this.isMobile = true;
-      this.navServ.isMenuOpen = false;
-      this.menuClicked = false;
+      this.langMenuClicked = false;
     } else {
       this.isMobile = false;
+      this.navServ.isMenuOpen = false;
     }
   }
 }

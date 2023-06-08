@@ -3,9 +3,14 @@
     "title": "Bienvenido a weather app"
   },
   "weather": {
-      "card": {
-        "title": "Esto es una prueba",
-        "subtitle": "Esto es la CARD"
-      }
+    "card": {
+      "title": "Esto es una prueba",
+      "humidity": "Humedad",
+      "more": "Ver más",
+      "less": "Ver menos",
+      "real": "Sensación real"
+    }
   }
 }
+
+

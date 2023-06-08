@@ -20,7 +20,7 @@
             <span class="default-lang">{{defaultLang | uppercase}}</span>
             <span (click)="toggleOption()"><i class="bi bi-chevron-down"></i></span>
           </div>
-          <div class="options" *ngIf="menuClicked">
+          <div class="options" *ngIf="langMenuClicked">
             <div><button (click)="changeLang('es')">ES</button></div>
             <div><button (click)="changeLang('en')">EN</button></div>
           </div>
@@ -29,6 +29,7 @@
         <div class="dark-mode">
           <i class="bi bi-moon-stars-fill"></i>
         </div>
+
       </div>
     </div>
   </nav>

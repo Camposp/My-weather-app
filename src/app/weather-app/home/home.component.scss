@@ -1,0 +1,21 @@
+@import "theme";
+
+.home {
+
+}
+
+
+.colors {
+  .violet {
+    background-color: $violet-color;
+    width: 730px;
+    height: 340px;
+    margin-bottom: 1rem;
+  }
+  .rgba-violet {
+    background-color: $rgba-violet-color;
+    width: 730px;
+    height: 340px;
+  }
+
+}

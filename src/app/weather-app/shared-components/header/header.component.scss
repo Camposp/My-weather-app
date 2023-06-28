@@ -1,14 +1,14 @@
+@import "theme";
 header {
-  box-shadow: 0 0 9px 2px rgba(0, 0, 0, 0.2);
+  //box-shadow: 0 0 9px 2px rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: azure;
-  position: fixed;
-  top: 0;
+  //position: fixed;
+  //top: 0;
   width: 100%;
 
-  .logo {
+  .brand {
     padding: 1rem 2rem;
   }
 
@@ -20,8 +20,9 @@ header {
 
       .nav-search {
         margin-right: 1rem;
-        i {
+        .heart-icon {
           font-size: 1.3rem;
+          color: var(--action-color);
         }
       }
       .nav-options {
@@ -32,6 +33,7 @@ header {
           .dropdown {
             position: relative;
             padding: .2rem .3rem;
+            color: var(--action-color);
 
             .default-lang {
               margin-right: 5px;
@@ -55,6 +57,7 @@ header {
               width: 100%;
 
               &:hover {
+                // TODO: ??
                 background-color: #f2f2f2;
               }
             }
@@ -62,8 +65,9 @@ header {
         }
 
         .dark-mode {
-          i{
+          .icon{
             font-size: 1.1rem;
+            color: var(--action-color);
           }
         }
       }
@@ -73,15 +77,15 @@ header {
 
 @media (max-width: 768px) {
   header {
-    .logo {
+    .brand {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      padding: 1rem 2rem;
+      padding: 1rem;
       width: 100%;
 
-      .logo-img {
-
+      .brand-img {
+        font-size: 1.5rem;
       }
       .menu-icon {
         font-size: 1.5rem;
@@ -89,7 +93,7 @@ header {
     }
 
     .nav-menu {
-      background: aliceblue;
+      background: var(--primary-color);
       width: 80vw;
       position: fixed;
       top: 0;
@@ -114,7 +118,7 @@ header {
       }
     }
     .backdrop-layer  {
-      background: rgba(38,38,38,.5);
+      background: var(--backdrop);
       width: 100vw;
       height: 100vh;
       z-index: 2;

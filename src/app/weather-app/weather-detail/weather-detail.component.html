@@ -19,9 +19,9 @@
       <p class="real-feel"><span translate>weather.card.real</span>
         {{weather.main.feels_like.toFixed()}}°</p>
     </div>
-    <small class="see-more" *ngIf="isMobile" (click)="seeMore()">
-      <small *ngIf="!moreContent" translate>weather.card.more</small>
-      <small *ngIf="moreContent" translate>weather.card.less</small>
+    <small class="see-more" *ngIf="isMobile">
+      <small *ngIf="!moreContent" (click)="seeMore()" translate>weather.card.more</small>
+      <small *ngIf="moreContent" (click)="seeMore()" translate>weather.card.less</small>
     </small>
     <div class="card-content" [ngClass]="{'hide': isMobile && !moreContent}">
       <div>{{weather.name}}, {{weather.sys.country}}</div>

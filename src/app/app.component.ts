@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, Renderer2 } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -8,23 +9,41 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent implements OnInit{
   title = 'my-weather-app';
-  storageLang: string | null;
-  constructor(private translate: TranslateService) {
-    this.storageLang = localStorage.getItem('lang');
+  langStorage: string | null;
+  // storageTheme: string | null;
+  constructor(private translate: TranslateService,
+              private renderer: Renderer2,
+              @Inject(DOCUMENT) private document: Document) {
+    this.langStorage = localStorage.getItem('lang');
+
   }
 
   ngOnInit() {
     this.checkLang();
+    //TODO: pte ver si meto la clase al body por aqui o no
+    // this.document.body.classList.add('theme');
   }
 
   checkLang() {
-    if (this.storageLang) {
-      this.translate.setDefaultLang(this.storageLang);
-      this.translate.use(this.storageLang);
+    if (this.langStorage) {
+      this.translate.setDefaultLang(this.langStorage);
+      this.translate.use(this.langStorage);
     } else {
-      this.storageLang = 'es';
-      this.translate.setDefaultLang(this.storageLang);
-      localStorage.setItem('lang', this.storageLang);
+      this.langStorage = 'es';
+      this.translate.setDefaultLang(this.langStorage);
+      localStorage.setItem('lang', this.langStorage);
     }
   }
+
+  // checkTheme() {
+  //   if (this.storageTheme) {
+  //     console.log('if', this.storageTheme)
+  //     localStorage.setItem('darkMode', this.storageTheme);
+  //     // this.renderer.addClass(document.body, this.storageTheme);
+  //   } else {
+  //     localStorage.setItem('darkMode', 'theme');
+  //     console.log('else', this.storageTheme)
+  //     this.renderer.addClass(document.body, 'theme')
+  //   }
+  // }
 }

@@ -1,14 +1,17 @@
+@import "theme";
+
 .card {
   display: flex;
   justify-content: center;
 
   .card-container {
+    background-color: var(--primary-color);
+    color: var(--text-color);
     width: 50vw;
-    border: 1px solid gray;
+    //border: 1px solid gray;
     display: flex;
     justify-content: space-around;
     padding: 1rem;
-    background: aliceblue;
 
     .card-header {
       order: 2;
@@ -32,6 +35,7 @@
       .see-more {
         display: block;
         text-align: end;
+        color: var(--action-color);
       }
 
       .hide {

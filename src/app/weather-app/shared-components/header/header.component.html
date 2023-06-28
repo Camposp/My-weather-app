@@ -1,6 +1,8 @@
 <header>
-  <div class="logo">
-    <h1 class="logo-img" [routerLink]="''">Logo</h1>
+  <div class="brand">
+    <h1 class="brand-img" [routerLink]="''">
+      <i class="bi bi-cloudy"></i> easy weather
+    </h1>
     <i *ngIf="isMobile"
        class="menu-icon"
        [ngClass]="{'bi bi-list': !navServ.isMenuOpen }"
@@ -10,7 +12,7 @@
   <nav class="nav-menu" *ngIf="((isMobile && navServ.isMenuOpen) || !isMobile)">
     <div class="nav-menu-container">
       <div class="nav-search">
-        <i *ngIf="!isMobile" class="bi bi-search-heart" [routerLink]="''"></i>
+        <i *ngIf="!isMobile" class="bi bi-search-heart heart-icon" [routerLink]="''"></i>
         <app-search *ngIf="isMobile"></app-search>
       </div>
       <div class="nav-options">
@@ -27,7 +29,7 @@
         </div>
 
         <div class="dark-mode">
-          <i class="bi bi-moon-stars-fill"></i>
+          <app-dark-mode></app-dark-mode>
         </div>
 
       </div>

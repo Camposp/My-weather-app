@@ -1,3 +1,4 @@
+@import "theme";
 
 html, body, div, input {
   margin: 0;
@@ -11,13 +12,16 @@ html, body, div, input {
 
 html, body{
   font-family: 'Nunito', sans-serif;
-  //background: $baseColor;
+  background-color: var(--base-color);
+  color: var(--text-color);
 }
 
-h1,h2,h3{
-  font-family: 'Tilt Neon', cursive;
+h1,h2,h3, h4, h5{
+  font-family: 'Pacifico', cursive;
   margin: 0;
+  color: var(--text-color);
 }
+
 
 p {
   margin: 10px 0;
@@ -26,4 +30,29 @@ p {
 
 .menu-on {
   overflow: hidden;
+}
+
+.main-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 0;
+}
+
+
+@media (min-width: 300px) and (max-width: 768px) {
+  .main-container {
+    max-width: 90vw;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .main-container {
+    max-width: 90vw;
+  }
+}
+
+@media (min-width: 993px) and (max-width: 1400px) {
+  .main-container {
+    max-width: 75vw;
+  }
 }

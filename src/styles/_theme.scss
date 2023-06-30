@@ -1,0 +1,35 @@
+//Light theme
+$base-color-light-theme: 		white;
+$primary-color-light-theme: #ccddff;
+$action-color-light-theme: #ff0080;
+$text-color-light-theme: #224068;
+$backdrop-light-theme: rgba(38, 38, 38, 0.5);
+$box-shadow-light-theme: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+
+//Dark theme
+$base-color-dark-theme: #2b2a33;
+$primary-color-dark-theme: #42414d;
+$action-color-dark-theme: #ff80a8;
+$text-color-dark-theme: #fbfbfe;
+$backdrop-dark-theme: rgba(38, 38, 38, 0.1);
+$box-shadow-dark-theme: 0 2px 6px rgba(0, 0, 0, 0.15);
+
+
+.theme {
+  --base-color: #{$base-color-light-theme};
+  --primary-color: #{$primary-color-light-theme};
+  --action-color: #{$action-color-light-theme};
+  --text-color: #{$text-color-light-theme};
+  --backdrop: #{$backdrop-light-theme};
+  --box-shadow: #{$box-shadow-light-theme};
+
+  &--dark {
+    --base-color: #{$base-color-dark-theme};
+    --primary-color: #{$primary-color-dark-theme};
+    --action-color: #{$action-color-dark-theme};
+    --text-color: #{$text-color-dark-theme};
+    --backdrop: #{$backdrop-dark-theme};
+    --box-shadow: #{$box-shadow-dark-theme};
+  }
+}

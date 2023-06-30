@@ -12,6 +12,7 @@ import { HeaderComponent } from './weather-app/shared-components/header/header.c
 
 import { WeatherAppModule } from './weather-app/weather-app.module';
 import { NavService } from './weather-app/nav.service';
+import { DarkModeComponent } from './weather-app/shared-components/dark-mode/dark-mode.component';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -23,21 +24,22 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppComponent,
     HeaderComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    WeatherAppModule,
-    HttpClientModule,
-    ToastrModule.forRoot(),
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      }
-    })
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        WeatherAppModule,
+        HttpClientModule,
+        ToastrModule.forRoot(),
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: HttpLoaderFactory,
+                deps: [ HttpClient ]
+            }
+        }),
+        DarkModeComponent
+    ],
   providers: [
     NavService
   ],

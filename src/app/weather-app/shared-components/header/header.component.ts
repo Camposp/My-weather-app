@@ -28,7 +28,6 @@ export class HeaderComponent implements OnInit{
 
   toggleMenuMobile() {
     this.navServ.toggle();
-
     if(this.navServ.isMenuOpen) {
       this.renderer.addClass(document.body, 'menu-on')
     } else {

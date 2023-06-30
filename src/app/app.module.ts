@@ -13,7 +13,6 @@ import { HeaderComponent } from './weather-app/shared-components/header/header.c
 import { WeatherAppModule } from './weather-app/weather-app.module';
 import { NavService } from './weather-app/nav.service';
 import { DarkModeComponent } from './weather-app/shared-components/dark-mode/dark-mode.component';
-import { ThemeService } from './weather-app/theme.service';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -42,8 +41,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         DarkModeComponent
     ],
   providers: [
-    NavService,
-    ThemeService
+    NavService
   ],
   bootstrap: [AppComponent]
 })

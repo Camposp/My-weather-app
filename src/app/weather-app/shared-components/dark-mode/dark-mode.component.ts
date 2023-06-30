@@ -1,4 +1,4 @@
-import { Component, Inject, Input, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DOCUMENT } from '@angular/common';
 @Component({
@@ -11,7 +11,6 @@ import { DOCUMENT } from '@angular/common';
 export class DarkModeComponent implements OnInit{
   private class = 'theme--dark';
   toggleTheme!: boolean;
-  // @Input()
   constructor(@Inject(DOCUMENT) private document: Document) { }
 
   /*ngOnInit() {
@@ -49,6 +48,7 @@ export class DarkModeComponent implements OnInit{
 
   checkTheme(){
     const darkModeStorage = localStorage.getItem('darkMode');
+    console.log('AAAAAAAAAAAAAA', darkModeStorage);
     if (!darkModeStorage) {
       localStorage.setItem('darkMode', false.toString());
     } else {
@@ -58,6 +58,7 @@ export class DarkModeComponent implements OnInit{
   }
 
   setTheme(isDark: boolean){
+    console.log('set', isDark)
     localStorage.setItem('darkMode', isDark.toString());
 
     if (isDark) {

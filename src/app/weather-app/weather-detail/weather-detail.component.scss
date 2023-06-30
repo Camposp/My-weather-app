@@ -8,10 +8,11 @@
     background-color: var(--primary-color);
     color: var(--text-color);
     width: 50vw;
-    //border: 1px solid gray;
     display: flex;
     justify-content: space-around;
     padding: 1rem;
+    box-shadow: var(--box-shadow);
+    border-radius: 5px;
 
     .card-header {
       order: 2;
@@ -28,6 +29,7 @@
   .card {
     .card-container {
       display: revert;
+      width: 100%;
 
       .card-header {
       }
@@ -43,4 +45,11 @@
       }
     }
   }
+}
+.color{
+  margin-top: 1rem;
+  margin-left: 10rem;
+  width: 200px;
+  height: 200px;
+  background-color: #ccddff;
 }

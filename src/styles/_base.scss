@@ -35,26 +35,24 @@ p {
 .main-container {
   max-width: 1400px;
   margin: 0 auto;
+  padding: 3rem 0;
 }
 
 
 @media (min-width: 300px) and (max-width: 768px) {
   .main-container {
-    background-color: yellow;
     max-width: 90vw;
   }
 }
 
 @media (min-width: 769px) and (max-width: 992px) {
   .main-container {
-    background-color: blueviolet;
     max-width: 90vw;
   }
 }
 
 @media (min-width: 993px) and (max-width: 1400px) {
   .main-container {
-    background-color: aqua;
     max-width: 75vw;
   }
 }

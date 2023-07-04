@@ -1,6 +1,9 @@
 {
   "home": {
-    "title": "Bienvenido a easy weather"
+    "title": "Bienvenido a easy weather",
+    "apikey-info": "Esta aplicación necesitará un api key de OpenWeather para funcionar.",
+    "link": "Obtén tu api key gratis",
+    "search-info": "Para una búsqueda más específica, pon el código del país después de la ciudad separado por una coma. Por ejemplo: ciudad, es"
   },
   "weather": {
     "card": {

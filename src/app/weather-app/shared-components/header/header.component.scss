@@ -47,8 +47,8 @@ header {
       .search {
         flex-basis: 100%;
 
-        .heart-icon {
-          font-size: 1.5rem;
+        .search-icon {
+          font-size: 1.2rem;
           color: var(--action-color);
         }
       }
@@ -128,14 +128,14 @@ header {
 
         .search {
           flex-basis: auto;
-          .heart-icon {
+          .search-icon {
             margin-right: 1rem;
           }
         }
 
           .language {
             margin-right: 1rem;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             //flex-grow: 0;
 
               .dropdown{

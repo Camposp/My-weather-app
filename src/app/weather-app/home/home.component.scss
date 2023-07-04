@@ -4,4 +4,21 @@
   .title {
     font-size: 1.7rem;
   }
+  .app-info {
+    background-color: var(--rgba-primary);
+    padding: 1rem;
+
+    p{
+      //font-size: 14px;
+    }
+  }
+}
+
+// D·e·s·ĸ·t·o·þ
+@media (min-width: 768px) {
+.home {
+  .title {
+    font-size: revert;
+  }
+}
 }

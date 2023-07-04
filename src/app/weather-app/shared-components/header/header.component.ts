@@ -46,7 +46,7 @@ export class HeaderComponent implements OnInit{
     }
   }
   @HostListener('window:resize') onResize() {
-    if (window.innerWidth < 769) { // 768px portrait
+    if (window.innerWidth < 769) {
       this.isMobile = true;
       this.langMenuClicked = false;
     } else {

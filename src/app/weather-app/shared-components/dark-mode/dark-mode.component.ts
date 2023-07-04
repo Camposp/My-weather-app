@@ -8,7 +8,7 @@ import { DOCUMENT } from '@angular/common';
   template: `
   <i [ngClass]="[(toggleTheme ? 'bi bi-moon-stars' : 'bi bi-brightness-high'), 'toggle-theme']"
     (click)="changeTheme()"></i>`,
-  styles: ['.toggle-theme {color: var(--action-color);font-size: 1.5rem;}']
+  styles: ['.toggle-theme {color: var(--action-color);font-size: 1.4rem;}']
 })
 export class DarkModeComponent implements OnInit{
   private class = 'theme--dark';

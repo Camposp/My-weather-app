@@ -1,52 +1,64 @@
 @import "theme";
 header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  //position: fixed;
-  //top: 0;
-  width: 100%;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+
 
   .brand {
-    padding: 1rem 2rem;
-    display: flex;
+    flex-basis: 70%;
+    padding: 0.5rem 1.5rem;
 
-    .icon {
-      font-size: 2.5rem;
+    .brand-title {
+      font-size: 1.6rem;
     }
+    .icon {
+      font-size: 2rem;
+    }
+  }
+
+  .menu-mobile {
+    font-size: 2rem;
+    color: var(--action-color);
+    flex-basis: 30%;
+    align-self: center;
+    text-align: end;
+    padding: .5rem 2rem;
+  }
+
+  .hide-nav {
+    display: none;
   }
 
   .nav-menu {
     padding: 1rem 1.5rem;
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 70%;
+    z-index: 3;
+
     .nav-menu-container {
       display: flex;
-      align-items: center;
+      flex-wrap: wrap;
 
-      .nav-search {
-        margin-right: 1rem;
+      .search {
+        flex-basis: 100%;
+
         .heart-icon {
           font-size: 1.5rem;
           color: var(--action-color);
         }
       }
-      .nav-options {
-        display: flex;
-        align-items: center;
-
         .language {
-          margin-right: 1rem;
-          font-size: 1.4rem;
+          flex-grow: 1;
+          margin-right: 0;
+          font-size: 1.3rem;
           .dropdown {
             position: relative;
-            padding: .2rem .3rem;
             color: var(--action-color);
-
-            .default-lang {
-              margin-right: 5px;
-            }
-            .bi-chevron-down {
-              font-size: .8em;
-            }
 
           }
           .options {
@@ -68,78 +80,75 @@ header {
             }
           }
         }
-
-        .dark-mode {
-          .icon{
-            font-size: 1.1rem;
-            color: var(--action-color);
-          }
-        }
-      }
     }
+  }
+
+  .backdrop-layer {
+    background: rgba(38, 38, 38, 0.5);
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    position: fixed;
+    top: 0;
   }
 }
 
-@media (max-width: 768px) {
+// D·e·s·ĸ·t·o·þ
+@media (min-width: 768px) {
   header {
+    justify-content: space-between;
+
+    .menu-mobile {
+      display: none;
+    }
+
     .brand {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      padding: 1rem;
-      width: 100%;
+      padding: .5rem 2rem;
 
       .icon{
-        font-size: 2.2rem;
+        font-size: 2.5rem;
       }
 
-      .brand-img {
-        font-size: 1.8rem;
-      }
-      .menu-icon {
-        font-size: 2rem;
-        color: var(--action-color);
+      .brand-title {
+        font-size: revert;
       }
     }
 
     .nav-menu {
-      background: var(--primary-color);
-      width: 80vw;
-      position: fixed;
-      top: 0;
-      z-index: 3;
-      box-shadow: var(--box-shadow);
+      display: flex;
+      position: static;
+      height: auto;
+      width: auto;
+      align-items: center;
+      background: var(--base-color);
+      padding: .5rem 1.5rem;
 
       .nav-menu-container {
-        display: revert;
-        height: 100vh;
+        flex-wrap: nowrap;
 
-        .nav-search {
-          margin-right: 0;
-
-          .brand-text {
-            text-align: center;
+        .search {
+          flex-basis: auto;
+          .heart-icon {
+            margin-right: 1rem;
           }
         }
-
-        .nav-options {
-          padding: 1rem 0;
-          justify-content: space-between;
 
           .language {
-            margin-right: 0;
-            font-size: 1.3rem;
+            margin-right: 1rem;
+            font-size: 1.4rem;
+            //flex-grow: 0;
+
+              .dropdown{
+                .bi-chevron-down {
+                  font-size: .8em;
+                }
+              }
+
           }
-        }
       }
     }
     .backdrop-layer  {
-      background: var(--backdrop);
-      width: 100vw;
-      height: 100vh;
-      z-index: 2;
-      position: fixed;
-      top: 0;
+      display: none;
     }
   }
 }

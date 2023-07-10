@@ -12,8 +12,8 @@
                       'bi bi-snow2':weather.weather[0].icon === '13d'||weather.weather[0].icon=== '13n',
                       'bi bi-water':weather.weather[0].icon === '50d' || weather.weather[0].icon=== '50n'}">
       </i>
-      <small>{{weather.weather[0].main}}</small>
-      <small>{{weather.weather[0].description | titlecase}}</small>
+<!--      <small>{{weather.weather[0].main}}</small>-->
+<!--      <small>{{weather.weather[0].description | titlecase}}</small>-->
       <p>{{weather.main.temp.toFixed()}}°</p>
       <p class="real-feel"><span translate>weather.card.real</span>
         {{weather.main.feels_like.toFixed()}}°</p>

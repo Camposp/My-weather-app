@@ -1,6 +1,9 @@
 {
   "home": {
-    "title": "Welcome to easy weather"
+    "title": "Welcome to easy weather",
+    "apikey-info": "This app will need OpenWeather api key to run.",
+    "link": "Get yor api key for free",
+    "search-info": "To be more specific, try putting the country code after the city separated by a comma. For example: city,uk"
   },
   "weather": {
     "card": {

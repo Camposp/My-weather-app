@@ -16,6 +16,8 @@ export class SearchComponent {
   inputChange(param: string) {
     if (param !== '' ) {
       const queryParam = param.trim();
+      console.log('param', queryParam)
+
       this.navServ.hide();
       this.router.navigate([`./detail/${queryParam}`]);
     }

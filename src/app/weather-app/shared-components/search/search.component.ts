@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { NavService } from '../../nav.service';
 @Component({
@@ -7,19 +7,18 @@ import { NavService } from '../../nav.service';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent {
+  @ViewChild('inputSearch') inputSearch!: ElementRef;
   constructor(private router: Router,
               private navServ: NavService) {
   }
 
-
-
   inputChange(param: string) {
     if (param !== '' ) {
-      const queryParam = param.trim();
-      console.log('param', queryParam)
+      let queryParam = param.trim();
 
       this.navServ.hide();
       this.router.navigate([`./detail/${queryParam}`]);
+      this.inputSearch.nativeElement.value = '';
     }
   }
 }

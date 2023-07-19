@@ -1,4 +1,4 @@
-
-<input type="text" placeholder="Ciudad..." class="input-search"
-       (keyup.enter)="inputChange(inputSearch.value)"
-       #inputSearch>
+<div class="input-search">
+    <input type="text" [placeholder]="'search' | translate" class="input"
+           (keyup.enter)="inputChange(inputSearch.value)"#inputSearch>
+</div>

@@ -1,11 +1,26 @@
 import { Component, HostListener, Input, OnInit, Renderer2 } from '@angular/core';
 import { NavService } from '../../nav.service';
 import { TranslateService } from '@ngx-translate/core';
+import { animate, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
+  animations: [
+    trigger('openClose', [
+      transition('leave => open', [
+        style({opacity: 0}),
+        animate('1s ease', style({opacity: 1}))
+      ]),
+      transition(':leave', [
+        style({opacity: 1}),
+        animate('0.3s ease', style({opacity: 0}))
+      ]),
+    ]),
+
+  ]
+
 })
 export class HeaderComponent implements OnInit{
   @Input() lang!: string | null;

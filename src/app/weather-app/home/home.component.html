@@ -1,15 +1,27 @@
 <div class="home">
     <h1 class="title" translate>home.title</h1>
-    <div class="app-info">
-      <p translate><i class="bi bi-lightning"></i>home.apikey-info
-        <a target="_blank" href="https://home.openweathermap.org/users/sign_up" translate>
-        home.link</a>
-      </p>
 
-      <p translate><i class="bi bi-lightbulb"></i>home.search-info</p>
+    <div class="box-info" [ngClass]="{'show-info': !closeInfoBox, 'hide-info': closeInfoBox}">
+
+      <div (click)="closeInfo()">
+        <i class="close-info"
+           [ngClass]="(closeInfoBox ? 'bi bi-info-circle': 'bi bi-x-lg')">
+        </i>
+      </div>
+
+      <div class="info">
+        <p translate><i class="bi bi-lightning-fill"> </i>home.apikey-info
+          <a target="_blank" href="https://home.openweathermap.org/users/sign_up" translate>
+            home.link</a>
+        </p>
+        <p translate><i class="bi bi-stars"> </i>home.search-info</p>
+      </div>
     </div>
+
     <app-search></app-search>
 </div>
+
+
 
 
 

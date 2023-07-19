@@ -5,13 +5,14 @@
     "link": "Get yor api key for free",
     "search-info": "To be more specific, try putting the country code after the city separated by a comma. For example: city,uk"
   },
+  "search": "City...",
   "weather": {
     "card": {
       "title": "This is a test",
       "humidity": "Humidity",
-      "more": "See more",
-      "less": "See less",
-      "real": "Real feel"
+      "real": "Real feel",
+      "sunset": "Sunset",
+      "sunrise": "Sunrise"
     }
   }
 }

@@ -3,13 +3,38 @@
 .home {
   .title {
     font-size: 1.7rem;
+    margin-bottom: 1rem;
   }
-  .app-info {
-    background-color: var(--rgba-primary);
+  .box-info {
     padding: 1rem;
+    box-shadow: var(--box-shadow);
 
-    p{
-      //font-size: 14px;
+    .close-info {
+      display: flex;
+      justify-content: flex-end;
+      color: var(--action-color);
+    }
+
+    .info {
+      p i {
+        margin-right: .3rem;
+        font-size: 1.2rem;
+        color: var(--base-color);
+        filter: drop-shadow(0 1px 1px var(--text-color));
+      }
+    }
+  }
+  .show-info {
+    background-color: var(--rgba-primary);
+  }
+
+  .hide-info {
+    background-color: transparent;
+    padding: 0 1rem;
+    box-shadow: none;
+
+    .info {
+      display: none;
     }
   }
 }

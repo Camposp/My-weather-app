@@ -1,6 +1,5 @@
 <header>
   <div class="brand">
-
     <h1 class="brand-title" [routerLink]="''"><i class="bi bi-cloudy icon"></i> easy weather</h1>
   </div>
 
@@ -8,7 +7,9 @@
     <i [ngClass]="(navServ.isMenuOpen ? 'bi bi-x-lg' : 'bi bi-justify')"></i>
   </div>
 
-  <nav class="nav-menu" [ngClass]="{'hide-nav': !navServ.isMenuOpen}">
+  <nav [@openCloseNav]="navServ.isMenuOpen ? 'open' : 'leave'" class="nav-menu"
+       [ngClass]="{'hide-nav': !navServ.isMenuOpen}">
+
     <div class="nav-menu-container">
       <h1 *ngIf="isMobile">easy weather</h1>
 
@@ -35,6 +36,7 @@
     </div>
   </nav>
   <div class="backdrop-layer"
+       @openCloseNav
        *ngIf="navServ.isMenuOpen"
        (click)="toggleMenuMobile()">
   </div>

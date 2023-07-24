@@ -5,8 +5,6 @@ import { SearchComponent } from './shared-components/search/search.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { CustomDatePipe } from './custom-date.pipe';
 
-
-
 @NgModule({
   declarations: [
     HomeComponent,

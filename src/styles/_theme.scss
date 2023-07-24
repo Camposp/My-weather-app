@@ -1,21 +1,26 @@
 //Light theme
-$base-color-light-theme: 		white;
+$base-color-light-theme: white;
 $primary-color-light-theme: #ccddff;
 $action-color-light-theme: #ff0080;
 $text-color-light-theme: #224068;
 $backdrop-light-theme: rgba(38, 38, 38, 0.5);
 $box-shadow-light-theme: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 $rgba-primary-light-theme: rgba(222, 232, 255,.5);
-
+$bg-weather-card-light-theme: linear-gradient(to left bottom, #ccddff, #c8c7ff, #d5acf7, #ec8cdd, #ff66b3);
+$weather-text-color-light-theme: white;
+$bg-top-transparent-light-theme: rgba(255,255,255,.2);
 
 //Dark theme
 $base-color-dark-theme: #2b2a33;
 $primary-color-dark-theme: #42414d;
 $action-color-dark-theme: #ff80a8;
 $text-color-dark-theme: #fbfbfe;
-$backdrop-dark-theme: rgba(38, 38, 38, 0.1);
+$backdrop-dark-theme: rgba(38, 38, 38, 0.6);
 $box-shadow-dark-theme: 0 2px 6px rgba(0, 0, 0, 0.15);
-//$rgba-primary-dark-theme: ;
+$bg-weather-card-dark-theme: linear-gradient(to right bottom, #2b2a33, #2f2e38, #33313c, #373541, #3b3946);
+$weather-text-color-dark-theme: white;
+$rgba-primary-dark-theme: rgba(59, 59, 69, .8);
+$bg-top-transparent-dark-theme: rgba(59, 59, 69, .8);
 
 
 .theme {
@@ -25,7 +30,10 @@ $box-shadow-dark-theme: 0 2px 6px rgba(0, 0, 0, 0.15);
   --text-color: #{$text-color-light-theme};
   --backdrop: #{$backdrop-light-theme};
   --box-shadow: #{$box-shadow-light-theme};
+  --bg-weather-card: #{$bg-weather-card-light-theme};
   --rgba-primary: #{$rgba-primary-light-theme};
+  --bg-top-transparent: #{$bg-top-transparent-light-theme};
+  --weather-text-color: #{$weather-text-color-light-theme};
 
   &--dark {
     --base-color: #{$base-color-dark-theme};
@@ -34,6 +42,9 @@ $box-shadow-dark-theme: 0 2px 6px rgba(0, 0, 0, 0.15);
     --text-color: #{$text-color-dark-theme};
     --backdrop: #{$backdrop-dark-theme};
     --box-shadow: #{$box-shadow-dark-theme};
-    //--rgba-primary: #{$rgba-primary-dark-theme};
+    --bg-weather-card: #{$bg-weather-card-dark-theme};
+    --bg-top-transparent: #{$bg-top-transparent-dark-theme};
+    --weather-text-color: #{$weather-text-color-dark-theme};
+    --rgba-primary: #{$rgba-primary-dark-theme};
   }
 }

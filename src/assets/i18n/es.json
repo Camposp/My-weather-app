@@ -5,13 +5,14 @@
     "link": "Obtén tu api key gratis",
     "search-info": "Para una búsqueda más específica, pon el código del país después de la ciudad separado por una coma. Por ejemplo: ciudad, es"
   },
+  "search": "Ciudad...",
   "weather": {
     "card": {
       "title": "Esto es una prueba",
       "humidity": "Humedad",
-      "more": "Ver más",
-      "less": "Ver menos",
-      "real": "Sensación real"
+      "real": "Sensación real",
+      "sunset": "Atardecer",
+      "sunrise": "Amanecer"
     }
   }
 }

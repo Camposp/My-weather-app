@@ -84,7 +84,7 @@ header {
   }
 
   .backdrop-layer {
-    background: rgba(38, 38, 38, 0.5);
+    background: var(--backdrop);
     width: 100vw;
     height: 100vh;
     z-index: 2;

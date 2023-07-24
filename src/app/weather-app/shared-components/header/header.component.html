@@ -7,7 +7,7 @@
     <i [ngClass]="(navServ.isMenuOpen ? 'bi bi-x-lg' : 'bi bi-justify')"></i>
   </div>
 
-  <nav [@openClose]="navServ.isMenuOpen ? 'open' : 'leave'" class="nav-menu"
+  <nav [@openCloseNav]="navServ.isMenuOpen ? 'open' : 'leave'" class="nav-menu"
        [ngClass]="{'hide-nav': !navServ.isMenuOpen}">
 
     <div class="nav-menu-container">
@@ -36,7 +36,7 @@
     </div>
   </nav>
   <div class="backdrop-layer"
-       @openClose
+       @openCloseNav
        *ngIf="navServ.isMenuOpen"
        (click)="toggleMenuMobile()">
   </div>

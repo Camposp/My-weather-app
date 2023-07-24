@@ -8,10 +8,10 @@ import { animate, style, transition, trigger } from '@angular/animations';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   animations: [
-    trigger('openClose', [
+    trigger('openCloseNav', [
       transition('leave => open', [
         style({opacity: 0}),
-        animate('1s ease', style({opacity: 1}))
+        animate('0.6s ease', style({opacity: 1}))
       ]),
       transition(':leave', [
         style({opacity: 1}),

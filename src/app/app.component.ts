@@ -17,7 +17,6 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit() {
-    console.log('entro en app oninit')
     this.checkLang();
   }
 

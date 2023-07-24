@@ -8,6 +8,7 @@
   .box-info {
     padding: 1rem;
     box-shadow: var(--box-shadow);
+    transition: 0.3s;
 
     .close-info {
       display: flex;
@@ -22,19 +23,6 @@
         color: var(--base-color);
         filter: drop-shadow(0 1px 1px var(--text-color));
       }
-    }
-  }
-  .show-info {
-    background-color: var(--rgba-primary);
-  }
-
-  .hide-info {
-    background-color: transparent;
-    padding: 0 1rem;
-    box-shadow: none;
-
-    .info {
-      display: none;
     }
   }
 }

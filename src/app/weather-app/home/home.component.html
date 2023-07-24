@@ -1,7 +1,7 @@
 <div class="home">
     <h1 class="title" translate>home.title</h1>
 
-    <div class="box-info" [ngClass]="{'show-info': !closeInfoBox, 'hide-info': closeInfoBox}">
+    <div class="box-info" [@openCloseInfoBox]="closeInfoBox ? 'closed' : 'open'">
 
       <div (click)="closeInfo()">
         <i class="close-info"
@@ -9,7 +9,7 @@
         </i>
       </div>
 
-      <div class="info">
+      <div *ngIf="!closeInfoBox" class="info">
         <p translate><i class="bi bi-lightning-fill"> </i>home.apikey-info
           <a target="_blank" href="https://home.openweathermap.org/users/sign_up" translate>
             home.link</a>

@@ -12,7 +12,9 @@
       "humidity": "Humidity",
       "real": "Real feel",
       "sunset": "Sunset",
-      "sunrise": "Sunrise"
+      "sunrise": "Sunrise",
+      "toastrErr": "Please, search again"
+
     }
   }
 }

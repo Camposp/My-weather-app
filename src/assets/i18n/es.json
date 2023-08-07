@@ -12,7 +12,8 @@
       "humidity": "Humedad",
       "real": "Sensación real",
       "sunset": "Atardecer",
-      "sunrise": "Amanecer"
+      "sunrise": "Amanecer",
+      "toastrErr": "Por favor realiza otra búsqueda"
     }
   }
 }

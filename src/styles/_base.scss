@@ -23,10 +23,10 @@ h1{
   color: var(--text-color);
 }
 
-h2,h3,h4 {
+h3 {
   font-family: 'Tilt Neon', cursive;
   margin: .5rem 0;
-  color: var(--weather-text-color);
+  color: white;
 }
 
 a {
@@ -37,6 +37,10 @@ a {
 
 p {
   margin: 10px 0;
+}
+
+.primary-color {
+  background-color: var(--primary-color);
 }
 
 .menu-on {

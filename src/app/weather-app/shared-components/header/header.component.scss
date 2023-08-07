@@ -12,6 +12,8 @@ header {
 
     .brand-title {
       font-size: 1.6rem;
+      width: fit-content;
+      cursor: pointer;
     }
     .icon {
       font-size: 2rem;
@@ -33,7 +35,6 @@ header {
 
   .nav-menu {
     padding: 1rem 1.5rem;
-    background-color: var(--primary-color);
     position: absolute;
     top: 0;
     height: 100vh;
@@ -120,7 +121,6 @@ header {
       height: auto;
       width: auto;
       align-items: center;
-      background: var(--base-color);
       padding: .5rem 1.5rem;
 
       .nav-menu-container {

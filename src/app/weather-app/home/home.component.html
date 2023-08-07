@@ -1,15 +1,15 @@
 <div class="home">
     <h1 class="title" translate>home.title</h1>
 
-    <div class="box-info" [@openCloseInfoBox]="closeInfoBox ? 'closed' : 'open'">
+    <div class="box-info" [@openCloseInfoBox]="isInfoBoxClosed ? 'closed' : 'open'">
 
       <div (click)="closeInfo()">
         <i class="close-info"
-           [ngClass]="(closeInfoBox ? 'bi bi-info-circle': 'bi bi-x-lg')">
+           [ngClass]="(isInfoBoxClosed ? 'bi bi-info-circle': 'bi bi-x-lg')">
         </i>
       </div>
 
-      <div *ngIf="!closeInfoBox" class="info">
+      <div *ngIf="!isInfoBoxClosed" class="info">
         <p translate><i class="bi bi-lightning-fill"> </i>home.apikey-info
           <a target="_blank" href="https://home.openweathermap.org/users/sign_up" translate>
             home.link</a>

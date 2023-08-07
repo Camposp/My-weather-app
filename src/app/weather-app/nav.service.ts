@@ -12,9 +12,6 @@ export class NavService {
     this.isMenuOpen = false;
   }
 
-  // show() {
-  //   this.isMenuOpen = true;
-  // }
 
   toggle() {
     this.isMenuOpen = !this.isMenuOpen;

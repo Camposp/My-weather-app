@@ -8,7 +8,7 @@
   </div>
 
   <nav [@openCloseNav]="navServ.isMenuOpen ? 'open' : 'leave'" class="nav-menu"
-       [ngClass]="{'hide-nav': !navServ.isMenuOpen}">
+       [ngClass]="{'hide-nav': !navServ.isMenuOpen, 'primary-color': isMobile}">
 
     <div class="nav-menu-container">
       <h1 *ngIf="isMobile">easy weather</h1>

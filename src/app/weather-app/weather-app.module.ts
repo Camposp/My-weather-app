@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './shared-components/search/search.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { CustomDatePipe } from './custom-date.pipe';
+import { InfoBoxService } from './infoBox.service';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,9 @@ import { CustomDatePipe } from './custom-date.pipe';
     HomeComponent,
     SearchComponent,
     CustomDatePipe
+  ],
+  providers: [
+    InfoBoxService
   ]
 })
 export class WeatherAppModule { }

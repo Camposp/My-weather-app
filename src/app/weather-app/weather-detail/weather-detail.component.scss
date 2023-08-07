@@ -4,7 +4,7 @@
 
   .card-container {
     background-image: var(--bg-weather-card);
-    color: var(--weather-text-color);
+    color: white;
     padding: 1rem;
     border-radius: 5px;
     box-shadow: var(--box-shadow);
@@ -17,13 +17,15 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
+
       .title {
         flex-basis: 100%;
       }
+
       .weather {
         .icons {
           font-size: 5rem;
-          color: var(--weather-text-color);
+          color: white;
           filter: drop-shadow(0 1px 5px var(--base-color));
         }
       }
@@ -59,7 +61,7 @@
 
         .icon{
           font-size: 1.2rem;
-          color: var(--weather-text-color);
+          color: white;
           margin-right: .5rem;
         }
 

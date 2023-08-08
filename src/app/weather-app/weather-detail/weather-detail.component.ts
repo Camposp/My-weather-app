@@ -20,7 +20,6 @@ export class WeatherDetailComponent implements OnInit, OnDestroy{
   weather$!: Observable<WeatherIn>;
   paramSubscription!: Subscription;
   isMobile!: boolean;
-  moreContent!: boolean;
   ngOnInit() {
     this.onResize();
 
@@ -34,14 +33,9 @@ export class WeatherDetailComponent implements OnInit, OnDestroy{
     this.weather$ = this.weatherServ.getWeatherByCity(city)
   }
 
-  seeMore() {
-    this.moreContent = !this.moreContent;
-  }
-
   @HostListener('window:resize') onResize() {
     if (window.innerWidth < 769) { // 768px portrait
       this.isMobile = true;
-      this.moreContent = false;
     } else {
       this.isMobile = false;
     }

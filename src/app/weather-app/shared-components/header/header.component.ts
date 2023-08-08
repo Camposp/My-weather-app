@@ -37,7 +37,7 @@ export class HeaderComponent implements OnInit{
     this.defaultLang = this.lang;
   }
 
-  toggleOption() {
+  toggleLangOption() {
     this.langMenuClicked = !this.langMenuClicked;
   }
 

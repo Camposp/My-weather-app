@@ -21,7 +21,7 @@
         <div class="language">
           <div class="dropdown">
             <span class="default-lang">{{defaultLang | uppercase}}</span>
-            <span (click)="toggleOption()"><i class="bi bi-chevron-down"></i></span>
+            <span (click)="toggleLangOption()"><i class="bi bi-chevron-down"></i></span>
           </div>
           <div class="options" *ngIf="langMenuClicked">
             <div><button (click)="changeLang('es')">ES</button></div>

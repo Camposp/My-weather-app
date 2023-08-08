@@ -5,6 +5,7 @@ import { catchError, Observable, throwError } from 'rxjs';
 import { WeatherIn } from './weather.interface';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 @Injectable()
 export class WeatherService {
   url: string = environment.weatherApi.api_url;
@@ -12,7 +13,8 @@ export class WeatherService {
 
   constructor(private http: HttpClient,
               private toastr: ToastrService,
-              private router: Router) {
+              private router: Router,
+              private translate: TranslateService) {
   }
 
   getWeatherByCity(param: string): Observable<WeatherIn> {
@@ -20,7 +22,8 @@ export class WeatherService {
       .pipe(
         catchError((err) => {
           this.router.navigate([''])
-          this.toastr.error('Por favor realiza otra búsqueda', `${err.statusText}`)
+          const msg = this.translate.instant('weather.card.toastrErr');
+          this.toastr.error(msg, `${err.statusText}`)
           return this.handleError(err);
         })
       )

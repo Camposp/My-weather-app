@@ -8,12 +8,11 @@
   "search": "Ciudad...",
   "weather": {
     "card": {
-      "title": "Esto es una prueba",
       "humidity": "Humedad",
       "real": "Sensación real",
       "sunset": "Atardecer",
       "sunrise": "Amanecer",
-      "toastrErr": "Por favor realiza otra búsqueda"
+      "toastrErr": "Error, por favor realiza otra búsqueda"
     }
   }
 }

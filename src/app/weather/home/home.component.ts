@@ -1,7 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { state, style, transition, trigger } from '@angular/animations';
-import { InfoBoxService } from '../infoBox.service';
 import { Subscription } from 'rxjs';
+
+import { InfoBoxService } from '../core/services/infoBox.service';
 
 @Component({
   selector: 'app-home',
@@ -26,13 +27,14 @@ import { Subscription } from 'rxjs';
     ])
   ]
 })
-export class HomeComponent implements OnInit, OnDestroy{
-  isInfoBoxClosed!: boolean;
-  subInfoBoxState!: Subscription;
-  constructor(private infoBoxServ: InfoBoxService) {
-  }
 
-  ngOnInit() {
+export class HomeComponent implements OnInit, OnDestroy{
+isInfoBoxClosed!: boolean;
+subInfoBoxState!: Subscription;
+
+  constructor(private infoBoxServ: InfoBoxService) {}
+
+  ngOnInit() {    
     this.getState();
   }
 

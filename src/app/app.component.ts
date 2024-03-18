@@ -1,6 +1,5 @@
-import { Component, Inject, OnInit, Renderer2 } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -9,11 +8,9 @@ import { DOCUMENT } from '@angular/common';
 })
 export class AppComponent implements OnInit{
   langStorage: string | null;
-  constructor(private translate: TranslateService,
-              private renderer: Renderer2,
-              @Inject(DOCUMENT) private document: Document) {
-    this.langStorage = localStorage.getItem('lang');
 
+  constructor(private translate: TranslateService) {
+    this.langStorage = localStorage.getItem('lang');
   }
 
   ngOnInit() {

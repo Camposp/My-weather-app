@@ -1,7 +1,8 @@
 import { Component, HostListener, Input, OnInit, Renderer2 } from '@angular/core';
-import { NavService } from '../../nav.service';
 import { TranslateService } from '@ngx-translate/core';
 import { animate, style, transition, trigger } from '@angular/animations';
+
+import { NavService } from 'src/app/weather/core/services/nav.service';
 
 @Component({
   selector: 'app-header',

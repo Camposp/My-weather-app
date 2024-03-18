@@ -8,12 +8,11 @@
   "search": "City...",
   "weather": {
     "card": {
-      "title": "This is a test",
       "humidity": "Humidity",
       "real": "Real feel",
       "sunset": "Sunset",
       "sunrise": "Sunrise",
-      "toastrErr": "Please search again"
+      "toastrErr": "Error, please search again"
 
     }
   }

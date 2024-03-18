@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DOCUMENT } from '@angular/common';
+
 @Component({
   selector: 'app-dark-mode',
   standalone: true,
@@ -10,12 +11,12 @@ import { DOCUMENT } from '@angular/common';
     (click)="changeTheme()"></i>`,
   styles: ['.toggle-theme {color: var(--action-color);font-size: 1.2rem;}']
 })
+
 export class DarkModeComponent implements OnInit{
   private class = 'theme--dark';
   toggleTheme!: boolean;
-  constructor(@Inject(DOCUMENT) private document: Document) { }
-
-
+  
+  constructor(@Inject(DOCUMENT) private document: Document) {}
 
   ngOnInit() {
     this.checkTheme();

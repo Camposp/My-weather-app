@@ -5,9 +5,9 @@ import { Subscription } from 'rxjs';
 import { InfoBoxService } from '../core/services/infoBox.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  selector: 'app-home-page',
+  templateUrl: './home-page.component.html',
+  styleUrls: ['./home-page.component.scss'],
   animations: [
     trigger('openCloseInfoBox', [
       state('open', style({
@@ -28,7 +28,7 @@ import { InfoBoxService } from '../core/services/infoBox.service';
   ]
 })
 
-export class HomeComponent implements OnInit, OnDestroy{
+export class HomePageComponent implements OnInit, OnDestroy{
 isInfoBoxClosed!: boolean;
 subInfoBoxState!: Subscription;
 

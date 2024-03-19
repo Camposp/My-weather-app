@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HomeComponent } from './home/home.component';
-import { WeatherDetailComponent } from './weather-detail/weather-detail.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { WeatherDetailPageComponent } from './weather-detail-page/weather-detail-page.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: HomePageComponent
   },
   {
     path: 'detail/:city',
-    component: WeatherDetailComponent
+    component: WeatherDetailPageComponent
   },
   {
     path: '**',

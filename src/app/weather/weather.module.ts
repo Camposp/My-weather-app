@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { HomeComponent } from './home/home.component';
-import { WeatherDetailComponent } from './weather-detail/weather-detail.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { WeatherDetailPageComponent } from './weather-detail-page/weather-detail-page.component';
 import { WeatherRoutingModule } from './weather-routing.module';
 
 import { CustomDatePipe } from './core/custom-date.pipe';
@@ -13,9 +13,9 @@ import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
-    HomeComponent,
+    HomePageComponent,
     CustomDatePipe,
-    WeatherDetailComponent
+    WeatherDetailPageComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +24,7 @@ import { SharedModule } from '../shared/shared.module';
     WeatherRoutingModule,
   ],
   exports: [
-    // CustomDatePipe
+    
   ],
   providers: [
     InfoBoxService,

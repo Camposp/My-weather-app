@@ -5,11 +5,11 @@ import { WeatherIn } from '../core/weather.interface';
 import { WeatherService } from '../core/services/weather.service';
 
 @Component({
-  selector: 'app-weather-detail',
-  templateUrl: './weather-detail.component.html',
-  styleUrls: ['./weather-detail.component.scss']
+  selector: 'app-weather-detail-page',
+  templateUrl: './weather-detail-page.component.html',
+  styleUrls: ['./weather-detail-page.component.scss']
 })
-export class WeatherDetailComponent implements OnInit, OnDestroy{
+export class WeatherDetailPageComponent implements OnInit, OnDestroy{
   isMobile!: boolean;
   weather$!: Observable<WeatherIn>;
   paramSubscription!: Subscription;

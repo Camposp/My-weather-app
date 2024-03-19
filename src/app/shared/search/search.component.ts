@@ -8,27 +8,27 @@ import { NavService } from 'src/app/weather/core/services/nav.service';
   template: `
     <div class="input-search">
       <input type="text" [placeholder]="'search' | translate" class="input"
-        (keyup.enter)="inputChange()"#inputSearch>
+        (keyup.enter)="inputChange()"#inputSearchValue>
     </div>
   ` ,
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent {
-  @ViewChild('inputSearch') inputSearch!: ElementRef<HTMLInputElement>;
+  @ViewChild('inputSearchValue') inputValue!: ElementRef<HTMLInputElement>;
 
   constructor(private router: Router,
               private navServ: NavService) {
   }
 
   inputChange() {
-    const newInputSearchValue = this.inputSearch.nativeElement.value;
+    const newInputSearchValue = this.inputValue.nativeElement.value;
 
     if (newInputSearchValue !== '' ) {
       let queryParam = newInputSearchValue.trim();
 
       this.navServ.hide();
       this.router.navigate([`./detail/${queryParam}`]);
-      this.inputSearch.nativeElement.value = '';
+      this.inputValue.nativeElement.value = '';
     }
   }
 }
